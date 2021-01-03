@@ -1,0 +1,1 @@
+export {RestDetails} from './RestDetails.jsx';

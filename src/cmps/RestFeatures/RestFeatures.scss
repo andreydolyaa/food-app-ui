@@ -1,0 +1,23 @@
+
+
+.rest-features{
+    display: flex;
+    margin-top:2rem;
+    font-family: worksans;
+    font-size:14px;
+    > *:not(:first-child){
+        margin-left:1.5rem;
+    }
+    i{
+        margin-right:5px;
+    }
+    
+}
+
+.allowed{
+    color:green;
+}
+
+.notAllowed{
+    color:red;
+}

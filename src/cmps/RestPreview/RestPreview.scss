@@ -1,0 +1,49 @@
+
+
+.rest-preview{
+    border:1px solid rgb(218, 218, 218);
+    border-radius:3px;
+    list-style: none;
+    padding:1rem;
+    margin:1rem;
+    font-family: Worksans;
+    color:rgb(65, 65, 65);
+    box-shadow: 1px 1px 2px rgb(230, 230, 230);
+    
+    p{
+        max-width:300px;
+    }
+    img{
+        width:390px;
+        height:250px;
+        object-fit: cover;
+        border-radius: 3px;
+    }
+    li > * {
+        margin:5px;
+    }
+    .order-btn{
+        display:flex;
+        justify-content: space-between;
+        
+        button{
+            width:70px;
+            height:25px;
+            font-size: 1rem;
+            border:1px solid rgb(94, 94, 94);
+            background-color: transparent;
+            cursor: pointer;
+            color:rgb(68, 68, 68);
+            transition: .2s;
+            border-radius: 3px;
+        }
+        a{
+            margin-top:auto;
+        }
+        button:hover{
+            color:white;
+            background-color: rgb(0, 0, 0);
+            border:1px solid black;
+        }
+    }
+}

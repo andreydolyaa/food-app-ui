@@ -1,0 +1,1 @@
+export {HeroImg} from './HeroImg.jsx';

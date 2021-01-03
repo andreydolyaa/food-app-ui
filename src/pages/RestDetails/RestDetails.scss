@@ -1,0 +1,32 @@
+
+.rest-details-main{
+    margin:2rem 1rem;
+}
+.rest-details{
+    color:rgb(45, 45, 59);
+    display:flex;
+    font-family: Worksans;
+    img{
+        width:600px;
+        border-radius:3px;
+        height:400px;
+        object-fit: cover;
+    }
+    h1{
+        margin-left:10px;
+    }
+    .rest-desc{
+        margin-left:2rem;
+        > *:not(:first-child) {
+            margin:10px;
+        }
+    }
+}
+
+
+.allowed{
+    color:rgb(124, 124, 124);
+}
+.notAllowed{
+    color:rgb(124, 124, 124);
+}
