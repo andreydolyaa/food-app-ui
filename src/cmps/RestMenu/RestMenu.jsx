@@ -2,7 +2,7 @@
 import './RestMenu.scss';
 import React, { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux';
-import { loadCart } from '../../store/actions/cartActions';
+import { loadCart, setNumOfItems } from '../../store/actions/cartActions';
 import { Msg } from '../Msg/Msg';
 
 export function RestMenu({ restaurant }) {
@@ -30,6 +30,7 @@ export function RestMenu({ restaurant }) {
 
     const addToCart = () => {
         dispatch(loadCart(dishes));
+        dispatch(setNumOfItems(dishes.length));
         toggleMsg();
     }
 
@@ -72,7 +73,7 @@ export function RestMenu({ restaurant }) {
                     )
                 })
             }
-            {showMsg && <Msg dishes={dishes}/>}
+            {showMsg && <Msg dishes={dishes} />}
         </ul>
     )
 }

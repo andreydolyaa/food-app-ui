@@ -6,13 +6,15 @@ import { AppHeader } from './cmps/AppHeader/AppHeader';
 import { RestDetails } from './pages/RestDetails/RestDetails';
 import Scroll from './cmps/Scroll/Scroll';
 import { Cart } from './cmps/Cart/Cart';
-import { useState } from 'react';
+import { useState, Redirect } from 'react';
+import { Checkout } from './pages/Checkout/Checkout';
+import RedirectPage from './cmps/RedirectPage/RedirectPage';
 
 
 
 
 export function App() {
-    
+
     return (
         <div className="App">
             <Router>
@@ -20,6 +22,8 @@ export function App() {
                 <Scroll />
                 <Switch>
                     <Route path="/restaurant/:id" render={props => <RestDetails {...props} />}></Route>
+                    <Route exact path="/order-process" component={RedirectPage}></Route>
+                    <Route exact path="/checkout" component={Checkout}></Route>
                     <Route path="/" component={HomePage}></Route>
                 </Switch>
             </Router>

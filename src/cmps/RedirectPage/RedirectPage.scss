@@ -1,0 +1,20 @@
+
+
+.loading{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top:10rem;
+    font-family: Raleway;
+    color:rgb(0, 0, 0);
+    h1{
+        margin:1rem;
+        background: linear-gradient(rgb(255, 178, 13), rgb(116, 64, 55));
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    img{
+        width:500px;
+    }
+}

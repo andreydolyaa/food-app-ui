@@ -9,3 +9,8 @@ export function loadCart(products) {
     }
 }
 
+export function setNumOfItems(num) {
+    return dispatch => {
+        dispatch({ type: 'SET_ITEMS_NUM', num });
+    }
+}

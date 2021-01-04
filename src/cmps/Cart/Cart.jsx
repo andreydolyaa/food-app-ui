@@ -5,6 +5,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import './Cart.scss';
 import { cartReducer } from './../../store/reducers/cartReducer';
 import { loadCart } from './../../store/actions/cartActions';
+import { Link } from 'react-router-dom';
+
 
 export function Cart(props) {
     const [prods, setProds] = useState([]);
@@ -49,7 +51,10 @@ export function Cart(props) {
                     })
                 }
                 <div className="done">
-                    <button>Proceed to checkout</button>
+                    <Link onClick={closeCart} className="to-checkout" to={{
+                        pathname:'/checkout',
+                        totalPrice:price
+                    }}>Proceed to checkout</Link>
                     <p>Total: ${price}</p>
                 </div>
             </ul>

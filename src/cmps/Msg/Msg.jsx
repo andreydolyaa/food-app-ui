@@ -14,7 +14,6 @@ export function Msg({ dishes }) {
 
         if (dishes.length > 1) {
             var res = dishes[dishes.length - 1];
-            console.log('POP', res);
             setDish(res.name);
         }
     }, [])
