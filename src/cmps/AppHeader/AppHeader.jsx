@@ -4,19 +4,21 @@ import React, { useEffect, useState } from 'react'
 import { Link, NavLink } from 'react-router-dom';
 import { Cart } from '../Cart/Cart';
 import { useDispatch, useSelector } from 'react-redux';
-import { loadCart } from './../../store/actions/cartActions';
+import { userService } from '../../services/userService';
+import { loadUser, setLoggedIn, logoutUser } from './../../store/actions/userActions';
+
 
 
 export function AppHeader(props) {
     var [showCart, setShowCart] = useState(false);
-    // const [numOfItems, setNumOfItems] = useState(0);
 
     const cartItems = useSelector(state => state.cartReducer.cartItems);
-    // const dispatch = useDispatch();
+    const user = useSelector(state => state.userReducer.user);
+
+    const dispatch = useDispatch();
 
     useEffect(() => {
-        // setNumOfItems(cartItems);
-        console.log('fsdf',props);
+
     }, [])
 
     const cartToggle = () => {
@@ -25,6 +27,11 @@ export function AppHeader(props) {
 
     const close = () => {
         setShowCart(false);
+    }
+
+    const logout = () => {
+        userService.logout();
+        dispatch(logoutUser());
     }
 
 
@@ -40,13 +47,26 @@ export function AppHeader(props) {
                 <NavLink to="">Explore</NavLink>
                 <NavLink to="">Contact</NavLink>
             </div>
-            <div className="user-icons">
-                <p>|</p>
+            {!user &&
+                <div className="user-icons">
+                    <div className="cart-num">{cartItems}</div>
+                    <i onClick={cartToggle} className="fas fa-shopping-bag"></i>
+                    <i className="fas fa-search"></i>
+                    <Link className="sign" to="/login">Sign In</Link>
+                    <p>|</p>
+                    <Link className="sign" to="/signup">Register</Link>
+                </div>
+            }
+            {user && user &&
+                <div className="logged-user">
+                <div className="ics">
                 <div className="cart-num">{cartItems}</div>
-                <i onClick={cartToggle} className="fas fa-shopping-bag"></i>
-                <i className="fas fa-search"></i>
-                <p>Sign In</p>
-            </div>
+                        <i onClick={cartToggle} className="fas fa-shopping-bag"></i>
+                        </div>
+                        <p className="user-profile">Hi, {user.username}<i className="fas fa-user-circle"></i></p>
+                    <p onClick={logout} className="logout">Logout <i className="fas fa-sign-out-alt"></i></p>
+                </div>
+            }
             {showCart && <Cart close={close} />}
 
         </div>

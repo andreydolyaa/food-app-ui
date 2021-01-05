@@ -10,7 +10,7 @@ export function cartReducer(state = INITIAL_STATE, action) {
         case 'SET_CART':
             return {
                 ...state,
-                cart: action.products,
+                cart: action.products
             }
         case 'SET_ITEMS_NUM':
             return {

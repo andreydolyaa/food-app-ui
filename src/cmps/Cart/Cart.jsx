@@ -25,8 +25,8 @@ export function Cart(props) {
     useEffect(() => {
         var res = products.reduce((acc, curr) => acc + curr.price, 0);
         setPrice(res);
-        
-    },[])
+
+    }, [])
 
     const closeCart = () => {
         props.close();
@@ -35,10 +35,10 @@ export function Cart(props) {
 
     return products && (
         <div className="cart">
-        <div className="close-cart">
-        <h3>Your order list -</h3>
-        <i onClick={closeCart} className="fas fa-times"></i>
-        </div>
+            <div className="close-cart">
+                <h3>Your order list -</h3>
+                <i onClick={closeCart} className="fas fa-times"></i>
+            </div>
             <ul>
                 {
                     products.map((product, index) => {
@@ -50,13 +50,21 @@ export function Cart(props) {
                         )
                     })
                 }
-                <div className="done">
-                    <Link onClick={closeCart} className="to-checkout" to={{
-                        pathname:'/checkout',
-                        totalPrice:price
-                    }}>Proceed to checkout</Link>
-                    <p>Total: ${price}</p>
-                </div>
+                {products.length > 0 &&
+                    <div className="done">
+                        <Link onClick={closeCart} className="to-checkout" to={{
+                            pathname: '/checkout',
+                            totalPrice: price
+                        }}>Proceed to checkout</Link>
+                        <p>Total: ${price}</p>
+                    </div>
+                }
+                {products.length === 0 &&
+                    <div className="empty-cart">
+                        <h4>Your cart is empty <i class="fas fa-shopping-cart"></i></h4>
+                        <Link onClick={closeCart} className="find-res" to="/">Find your favorite restaurant</Link>
+                    </div>
+                }
             </ul>
 
         </div>

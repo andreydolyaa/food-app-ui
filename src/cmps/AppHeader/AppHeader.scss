@@ -6,6 +6,45 @@
     display:flex;
     align-items: center;
     justify-content: space-between;
+    .logged-user{
+        font-family: worksans;
+        width:300px;
+        display:flex;
+        justify-content: space-between;
+        align-items: center;
+        .ics{
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+        }
+        .user-profile{
+            cursor: pointer;
+        }
+        .logout{
+            cursor: pointer;
+        }
+        p{
+            display: flex;
+            align-items: center;
+            font-size:14px;
+            margin-left:12px;
+            transition: .2s;
+        }
+        p:hover{
+            color:rgb(155, 155, 155);
+        }
+        i{
+            font-size:1rem;
+            margin-left:12px;
+            transition: .2s;
+        }
+        i:hover{
+            color:rgb(255, 112, 30);
+        }
+    }
+    .sign{
+        margin-right: 0px;
+    }
     a{
         text-decoration: none;
         color:black;
@@ -16,10 +55,11 @@
     }
     a:hover{
         // color:rgb(172, 172, 172);
-        border-bottom: 1px dotted black;
+        border-bottom:1px dotted rgb(255, 112, 30);
+        color:rgb(255, 112, 30);
     }
     .user-icons{
-        width:160px;
+        width:270px;
         display:flex;
         align-items: center;
         justify-content: space-around;
@@ -46,5 +86,6 @@
             font-size:12px;
             background-color: rgb(0, 0, 0);
             border-radius: 3px;
+            cursor: default;
         }
 }
