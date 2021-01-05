@@ -2,18 +2,30 @@
 
 import React, { useEffect, useState } from 'react';
 import './Checkout.scss';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { useForm } from 'react-hook-form';
 import { orderService } from './../../services/orderService';
 import { Redirect } from 'react-router-dom';
+import { userService } from '../../services/userService';
+import { userReducer } from './../../store/reducers/userReducer';
+import { loadUser } from './../../store/actions/userActions';
 
 export function Checkout(props) {
     const { register, handleSubmit } = useForm();
 
     const cart = useSelector(state => state.cartReducer.cart);
+    const user = useSelector(state => state.userReducer.user);
+    const dispatch = useDispatch();
 
-    const onSubmit = (data) => {
+
+    useEffect(() => {
+        if(user) dispatch(loadUser(user._id));
+    }, [])
+    const onSubmit = async (data) => {
         orderService.submitOrder(data, cart, props.location.totalPrice);
+        if (user) {
+            await userService.updatePurchaseHistory(user, cart);
+        }
         props.history.push('/order-process');
     }
 

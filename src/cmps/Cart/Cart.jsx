@@ -14,14 +14,6 @@ export function Cart(props) {
     const products = useSelector(state => state.cartReducer.cart);
     const dispatch = useDispatch();
 
-
-
-
-    const calcProductsAmount = () => {
-
-    }
-
-
     useEffect(() => {
         var res = products.reduce((acc, curr) => acc + curr.price, 0);
         setPrice(res);
@@ -61,7 +53,7 @@ export function Cart(props) {
                 }
                 {products.length === 0 &&
                     <div className="empty-cart">
-                        <h4>Your cart is empty <i class="fas fa-shopping-cart"></i></h4>
+                        <h4>Your cart is empty <i className="fas fa-shopping-cart"></i></h4>
                         <Link onClick={closeCart} className="find-res" to="/">Find your favorite restaurant</Link>
                     </div>
                 }

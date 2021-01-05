@@ -35,6 +35,7 @@ export function AppHeader(props) {
     }
 
 
+
     return (
         <div className="app-header">
             <div>
@@ -59,12 +60,12 @@ export function AppHeader(props) {
             }
             {user && user &&
                 <div className="logged-user">
-                <div className="ics">
-                <div className="cart-num">{cartItems}</div>
+                    <div className="ics">
+                        <div className="cart-num">{cartItems}</div>
                         <i onClick={cartToggle} className="fas fa-shopping-bag"></i>
-                        </div>
-                        <p className="user-profile">Hi, {user.username}<i className="fas fa-user-circle"></i></p>
-                    <p onClick={logout} className="logout">Logout <i className="fas fa-sign-out-alt"></i></p>
+                    </div>
+                    <Link className="user-profile" to="/user-details"><p>Hi, {user.username}<i className="fas fa-user-circle"></i></p></Link>
+                    <Link className="logout" to="/"><p onClick={logout}>Logout <i className="fas fa-sign-out-alt"></i></p></Link>
                 </div>
             }
             {showCart && <Cart close={close} />}

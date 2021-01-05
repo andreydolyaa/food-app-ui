@@ -19,9 +19,19 @@
         }
         .user-profile{
             cursor: pointer;
+            margin-right:0px;
+        }
+        .user-profile:hover{
+            color:rgb(155, 155, 155);
+            border:none;
         }
         .logout{
             cursor: pointer;
+            margin-right:0px;
+        }
+        .logout:hover{
+            color:rgb(155, 155, 155);
+            border:none;
         }
         p{
             display: flex;

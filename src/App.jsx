@@ -9,6 +9,7 @@ import { Checkout } from './pages/Checkout/Checkout';
 import RedirectPage from './cmps/RedirectPage/RedirectPage';
 import { Signup } from './pages/Signup/Signup';
 import { Login } from './pages/Login/Login';
+import { UserDetails } from './pages/UserDetails/UserDetails';
 
 
 
@@ -23,6 +24,7 @@ export function App() {
                 <Switch>
                     <Route path="/restaurant/:id" render={props => <RestDetails {...props} />}></Route>
                     <Route exact path="/order-process" component={RedirectPage}></Route>
+                    <Route exact path="/user-details" component={UserDetails}></Route>
                     <Route exact path="/checkout" component={Checkout}></Route>
                     <Route excat path="/signup" component={Signup}></Route>
                     <Route excat path="/login" component={Login}></Route>
