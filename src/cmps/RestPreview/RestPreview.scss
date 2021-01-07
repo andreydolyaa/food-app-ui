@@ -47,3 +47,44 @@
         }
     }
 }
+
+
+@media(max-width:1150px){
+    .rest-preview{
+        img{
+            width:400px;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+}
+
+
+
+@media(max-width:500px){
+    .rest-preview{
+        img{
+            width:300px;
+            justify-content: center;
+            align-items: center;
+        }
+        p{
+            font-size:12px;
+            max-width:200px;
+        }
+    }
+}
+@media(max-width:320px){
+    .rest-preview{
+        img{
+            width:250px;
+            justify-content: center;
+            align-items: center;
+            object-fit: cover;
+        }
+        p{
+            font-size:12px;
+            max-width:150px;
+        }
+    }
+}

@@ -76,3 +76,22 @@
         color:rgb(255, 255, 255);
     }
 }
+
+
+@media(max-width:520px){
+    .login{
+        margin-top:2rem;
+        form{
+            width:320px;
+            label{
+                font-size:1rem;
+                input{
+                    width:200px;
+                }
+            }
+        }
+        .new-user{
+            width:300px;
+        }
+    }
+}

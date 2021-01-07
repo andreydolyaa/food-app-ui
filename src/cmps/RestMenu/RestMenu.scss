@@ -91,3 +91,150 @@
         }
     }
 }
+
+
+@media(max-width:930px){
+    .rest-menu{
+        flex-direction: column;
+        justify-content: center;
+        img{
+            width:650px;
+            height:400px;
+            text-align: center;
+        }
+        li{
+            justify-content: center;
+            align-items: center;
+        }
+        .dish-info{
+            width:80%;
+            justify-content: space-between;
+        }
+    }
+}
+@media(max-width:730px){
+    .rest-menu{
+        flex-direction: column;
+        justify-content: center;
+        img{
+            width:500px;
+            height:400px;
+            text-align: center;
+        }
+        li{
+            justify-content: center;
+            align-items: center;
+        }
+        .dish-info{
+            width:80%;
+            justify-content: space-between;
+        }
+    }
+}
+@media(max-width:590px){
+    .rest-menu{
+        flex-direction: column;
+        justify-content: center;
+        img{
+            width:400px;
+            height:300px;
+            text-align: center;
+        }
+        li{
+            justify-content: center;
+            align-items: center;
+        }
+        .dish-info{
+            width:80%;
+            justify-content: space-between;
+        }
+    }
+}
+@media(max-width:475px){
+    .rest-menu{
+        flex-direction: column;
+        justify-content: center;
+        img{
+            width:350px;
+            height:200px;
+            text-align: center;
+        }
+        li{
+            justify-content: center;
+            align-items: center;
+            font-size:14px;
+            p{
+                width:280px;
+                font-size:12px;
+                text-align: center;
+                margin:1rem auto;
+            }
+        }
+        .dish-info{
+            font-size:10px;
+           align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            .dish-num{
+                width:70px;
+                font-size:1rem;
+                i{
+                    font-size:1rem;
+                }
+            }
+            button{
+                width:100%;
+                margin-top:1rem;
+            }
+            p{
+                margin:0px;
+                margin-top:5px;
+                font-size:12px;
+            }
+        }
+    }
+}
+@media(max-width:420px){
+    .rest-menu{
+        flex-direction: column;
+        justify-content: center;
+        img{
+            width:250px;
+            height:200px;
+            text-align: center;
+        }
+        li{
+            justify-content: center;
+            align-items: center;
+            font-size:14px;
+            p{
+                width:250px;
+                font-size:12px;
+                text-align: center;
+                margin:1rem auto;
+            }
+        }
+        .dish-info{
+            font-size:10px;
+           align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            .dish-num{
+                width:70px;
+                font-size:1rem;
+                i{
+                    font-size:1rem;
+                }
+            }
+            button{
+                width:100%;
+                margin-top:1rem;
+            }
+            p{
+                margin:0px;
+                margin-top:5px;
+                font-size:12px;
+            }
+        }
+    }
+}

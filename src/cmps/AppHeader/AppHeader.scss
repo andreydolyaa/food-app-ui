@@ -100,4 +100,203 @@
             border-radius: 3px;
             cursor: default;
         }
+        .bars-btn{
+            display: none;
+            align-items: center;
+            button{
+                border:none;
+                outline: none;
+                background:transparent;
+                cursor: pointer;
+                i{
+                    font-size:1.5rem;
+                }
+            }
+        }
 }
+
+
+
+.mobile-nav{
+    display: none;
+    margin:1rem;
+    margin-bottom:1rem;
+    font-family: worksans;
+    background-color: black;
+    color:white;
+    .mobile-links{
+        display:flex;
+        flex-direction: column;
+        padding:10px;
+        border-bottom: 1px dotted rgb(102, 102, 102);
+        a{
+            margin:5px;
+            text-decoration: none;
+            color:white;
+        }
+    }
+    .mobile-login{
+        .user-icons{
+            display:flex;
+            justify-content: space-around;
+            align-items: center;
+            padding:2rem;
+            .cart-num{
+                width:16px;
+                height:16px;
+                color:rgb(0, 0, 0);
+                display: flex;
+                text-align: center;
+                justify-content: center;
+                align-items: center;
+                margin:0px;
+                font-size:14px;
+                background-color: rgb(255, 255, 255);
+                border-radius: 3px;
+                cursor: default;
+            }
+        }
+        .logged-user{
+            display:flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            padding:2rem;
+            .ics{
+                display:flex;
+                align-items: center;
+                .cart-num{
+                    width:16px;
+                    height:16px;
+                    color:rgb(0, 0, 0);
+                    display: flex;
+                    text-align: center;
+                    justify-content: center;
+                    align-items: center;
+                    margin:0px;
+                    margin-right:1rem;
+                    font-size:14px;
+                    background-color: rgb(255, 255, 255);
+                    border-radius: 3px;
+                    cursor: default;
+                }
+            }
+            p{
+                margin:10px;
+            }
+            .user-profile{
+                text-decoration: none;
+                i{
+                    margin-top:10px;
+                    margin-left:5px;
+                }
+            }
+            .logout{
+                text-decoration: none;
+                i{
+                    margin-left:5px;
+                }
+            }
+        }
+        a{
+            color:white;
+        }
+    }
+}
+
+.show{
+    // height:35vh;
+    // transform: translateY(1%);
+    // transition: .3s ease-in-out;
+    animation: pulse .3s ease-in-out;
+    display: block;
+}
+.hide{
+    // height:0px;
+    // transform: translateY(200%);
+    // transition: .2s ease-in-out;
+    animation: pulse-out 3s ease-in-out;
+    // display: none;
+}
+
+  
+  @keyframes pulse {
+    0% {
+        transform: translateX(200%);
+    }
+    100% {
+      transform: translateY(0%);
+    }
+  }
+
+  @keyframes pulse-out {
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-200%);
+    }
+  }
+
+
+@media(min-width:1151px){
+    .mobile-nav{
+        display:none;
+    }
+}
+@media(max-width:1150px){
+    .app-header{
+        .logged-user{
+            display:none;
+        }
+        .user-icons{
+            display:none;
+        }
+        .bars-btn{
+            display:block;
+        }
+        .links{
+            display:none;
+        }
+    }
+    .mobile-nav{
+        .mobile-login{
+            .user-icons{
+                justify-content: center;
+            }
+            .user-icons > * {
+                margin:1rem;
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+
+
+
+@media(max-width:500px){
+    .mobile-nav{
+        margin:0;
+        .mobile-login{
+            .user-icons{
+                padding:1rem;
+                a{
+                    font-size:14px;
+                    text-decoration: none;
+                }
+                .cart-num{
+                    
+                }
+            }
+            
+            .user-icons > * {
+                margin:1rem;
+            }
+        }
+    }
+    .app-header{
+        
+    }
+}
+

@@ -21,3 +21,22 @@
 .notAllowed{
     color:red;
 }
+
+
+
+@media(max-width:1150px){
+    .rest-features{
+        font-size: 12px;
+    }
+}
+@media(max-width:730px){
+    .rest-features{
+        font-size: 10px;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        p{
+            margin:5px;
+        }
+    }
+}

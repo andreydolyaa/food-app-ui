@@ -9,8 +9,11 @@ import { loadUser, setLoggedIn, logoutUser } from './../../store/actions/userAct
 
 
 
+
 export function AppHeader(props) {
     var [showCart, setShowCart] = useState(false);
+    var [mobileMenu, setMobileMenu] = useState(false);
+
 
     const cartItems = useSelector(state => state.cartReducer.cartItems);
     const user = useSelector(state => state.userReducer.user);
@@ -34,44 +37,91 @@ export function AppHeader(props) {
         dispatch(logoutUser());
     }
 
+    const openMobileMenu = () => {
+        setMobileMenu(mobileMenu = !mobileMenu);
+    }
 
 
     return (
-        <div className="app-header">
-            <div>
-                <h1>fooder<span>Place</span></h1>
-            </div>
-            <div>
-                <NavLink to="">About</NavLink>
-                <NavLink to="">Restaurants</NavLink>
-                <NavLink to="">Order</NavLink>
-                <NavLink to="">Explore</NavLink>
-                <NavLink to="">Contact</NavLink>
-            </div>
-            {!user &&
-                <div className="user-icons">
-                    <div className="cart-num">{cartItems}</div>
-                    <i onClick={cartToggle} className="fas fa-shopping-bag"></i>
-                    <i className="fas fa-search"></i>
-                    <Link className="sign" to="/login">Sign In</Link>
-                    <p>|</p>
-                    <Link className="sign" to="/signup">Register</Link>
+        <div>
+            <div className="app-header">
+                <div>
+                    <h1>fooder<span>Place</span></h1>
                 </div>
-            }
-            {user && user &&
-                <div className="logged-user">
-                    <div className="ics">
+                <div className="links">
+                    <NavLink to="">About</NavLink>
+                    <NavLink to="">Restaurants</NavLink>
+                    <NavLink to="">Order</NavLink>
+                    <NavLink to="">Explore</NavLink>
+                    <NavLink to="">Contact</NavLink>
+                </div>
+                {!user &&
+                    <div className="user-icons">
                         <div className="cart-num">{cartItems}</div>
                         <i onClick={cartToggle} className="fas fa-shopping-bag"></i>
+                        <i className="fas fa-search"></i>
+                        <Link className="sign" to="/login">Sign In</Link>
+                        <p>|</p>
+                        <Link className="sign" to="/signup">Register</Link>
                     </div>
-                    <Link className="user-profile" to="/user-details"><p>Hi, {user.username}<i className="fas fa-user-circle"></i></p></Link>
-                    <Link className="logout" to="/"><p onClick={logout}>Logout <i className="fas fa-sign-out-alt"></i></p></Link>
+                }
+                {user && user &&
+                    <div className="logged-user">
+                        <div className="ics">
+                            <div className="cart-num">{cartItems}</div>
+                            <i onClick={cartToggle} className="fas fa-shopping-bag"></i>
+                        </div>
+                        <Link className="user-profile" to="/user-details"><p>Hi, {user.username}<i className="fas fa-user-circle"></i></p></Link>
+                        <Link className="logout" to="/"><p onClick={logout}>Logout <i className="fas fa-sign-out-alt"></i></p></Link>
+                    </div>
+                }
+                {showCart && <Cart close={close} />}
+                <div className="bars-btn">
+                    <button onClick={openMobileMenu}><i className="fas fa-bars"></i></button>
                 </div>
-            }
-            {showCart && <Cart close={close} />}
+            </div>
+
+
+
+
+            <div className={mobileMenu ? 'show mobile-nav' : 'hide mobile-nav'}>
+                <div className="mobile-links">
+                    <NavLink to="">About</NavLink>
+                    <NavLink to="">Restaurants</NavLink>
+                    <NavLink to="">Order</NavLink>
+                    <NavLink to="">Explore</NavLink>
+                    <NavLink to="">Contact</NavLink>
+                </div>
+                <div className="mobile-login">
+                    {!user &&
+                        <div className="user-icons">
+                            <div className="cart-num">{cartItems}</div>
+                            <i onClick={cartToggle} className="fas fa-shopping-bag"></i>
+                            <Link className="sign" to="/login">Sign In</Link>
+                            <p>|</p>
+                            <Link className="sign" to="/signup">Register</Link>
+                        </div>
+                    }
+                    {user && user &&
+                        <div className="logged-user">
+                            <div className="ics">
+                                <div className="cart-num">{cartItems}</div>
+                                <i onClick={cartToggle} className="fas fa-shopping-bag"></i>
+                            </div>
+                            <Link className="user-profile" to="/user-details"><p>Hi, {user.username}<i className="fas fa-user-circle"></i></p></Link>
+                            <Link className="logout" to="/"><p onClick={logout}>Logout <i className="fas fa-sign-out-alt"></i></p></Link>
+                        </div>
+                    }
+                </div>
+            </div>
+
+
 
         </div>
     )
 }
 
-
+// style={{display: mobileMenu ? 'block' : 'none'}}
+// <div className="mobile-header" style={{ display: mobileMenu ? 'flex' : 'none' }} >
+//                     <MobileMenu closeMobileMenu={openMobileMenu} />
+//             </div>

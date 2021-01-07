@@ -2,7 +2,16 @@
 
 import axios from 'axios';
 import moment from 'moment';
-const BASE_URL = 'http://localhost:3001/api/auth';
+// const BASE_URL = 'http://localhost:3001/api/auth';
+
+
+const BASE_URL = process.env.NODE_ENV === 'production'
+    ? '/api/'
+    : 'http://localhost:3001/api/auth'
+
+const BASE_URL_USER = process.env.NODE_ENV === 'production'
+    ? '/api/'
+    : 'http://localhost:3001/api/user'
 
 export const userService = {
     signup,
@@ -17,7 +26,7 @@ export const userService = {
 
 
 async function query() {
-    return await axios.get('http://localhost:3001/api/user');
+    return await axios.get(BASE_URL_USER);
 }
 
 async function getUserByEmail(email) {
@@ -34,7 +43,7 @@ async function updatePurchaseHistory(user, purchase, restaurant, totalPrice) {
     _changeKey(restaurant, "name", "restName");
     purchase.push(restaurant)
     user.orders.push(purchase);
-    return await axios.put(`http://localhost:3001/api/user/${user._id}`, user);
+    return await axios.put(`${BASE_URL_USER}/${user._id}`, user);
 }
 
 
@@ -45,7 +54,7 @@ function _changeKey(obj, oldName, newName) {
 
 
 async function getById(userId) {
-    return await axios.get(`http://localhost:3001/api/user/${userId}`);
+    return await axios.get(`${BASE_URL_USER}/${userId}`);
 }
 
 
