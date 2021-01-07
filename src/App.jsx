@@ -10,6 +10,7 @@ import RedirectPage from './cmps/RedirectPage/RedirectPage';
 import { Signup } from './pages/Signup/Signup';
 import { Login } from './pages/Login/Login';
 import { UserDetails } from './pages/UserDetails/UserDetails';
+import { AppFooter } from './cmps/AppFooter/AppFooter';
 
 
 
@@ -30,6 +31,7 @@ export function App() {
                     <Route excat path="/login" component={Login}></Route>
                     <Route path="/" component={HomePage}></Route>
                 </Switch>
+                <AppFooter />
             </Router>
         </div>
     );

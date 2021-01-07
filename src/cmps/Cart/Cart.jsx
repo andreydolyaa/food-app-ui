@@ -3,8 +3,6 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import './Cart.scss';
-import { cartReducer } from './../../store/reducers/cartReducer';
-import { loadCart } from './../../store/actions/cartActions';
 import { Link } from 'react-router-dom';
 
 
@@ -12,7 +10,6 @@ export function Cart(props) {
     const [prods, setProds] = useState([]);
     const [price, setPrice] = useState(0);
     const products = useSelector(state => state.cartReducer.cart);
-    const dispatch = useDispatch();
 
     useEffect(() => {
         var res = products.reduce((acc, curr) => acc + curr.price, 0);
@@ -46,7 +43,8 @@ export function Cart(props) {
                     <div className="done">
                         <Link onClick={closeCart} className="to-checkout" to={{
                             pathname: '/checkout',
-                            totalPrice: price
+                            totalPrice: price,
+                            props
                         }}>Proceed to checkout</Link>
                         <p>Total: ${price}</p>
                     </div>

@@ -1,9 +1,33 @@
 
 
 .user-details{
-    margin:3rem 1rem;
-    font-family: raleway;
+    margin:1rem 1rem 0 1rem;
+    font-family: opensans;
     text-align: center;
+    
+    .welcome-msg{
+        background-color: rgb(238, 238, 238);
+        padding:1rem;
+        border-radius:3px;
+    }
+    .total-history{
+        margin-top:1rem;
+        text-align: end;
+        color:rgb(255, 115, 0);
+    }
+    h1{
+        color:rgb(255, 123, 0);
+        margin:1rem;
+    }
+    h3{
+        color:rgb(129, 129, 129);
+    }
+    h4{
+        color:rgb(104, 104, 104);
+        span{
+            color:rgb(255, 72, 0);
+        }
+    }
     .order-history{
         padding:3px;
         border:1px solid rgb(209, 209, 209);

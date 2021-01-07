@@ -8,7 +8,7 @@
     justify-content: space-between;
     .logged-user{
         font-family: worksans;
-        width:300px;
+        width:330px;
         display:flex;
         justify-content: space-between;
         align-items: center;
@@ -16,6 +16,7 @@
             display: flex;
             align-items: center;
             cursor: pointer;
+            font-size:1rem;
         }
         .user-profile{
             cursor: pointer;
@@ -36,7 +37,7 @@
         p{
             display: flex;
             align-items: center;
-            font-size:14px;
+            font-size:1rem;
             margin-left:12px;
             transition: .2s;
         }
@@ -54,12 +55,13 @@
     }
     .sign{
         margin-right: 0px;
+        font-size:1rem;
     }
     a{
         text-decoration: none;
         color:black;
         margin-right:3rem;
-        font-size:16px;
+        font-size:1rem;
         font-family: Worksans;
         transition: .2s;
     }
@@ -73,7 +75,7 @@
         display:flex;
         align-items: center;
         justify-content: space-around;
-        font-size:16px;
+        font-size:1rem;
         cursor: pointer;
         font-family: Worksans;
         .link-cart{

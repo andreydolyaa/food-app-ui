@@ -23,6 +23,7 @@ export function Signup(props) {
 
     return (
         <div className="signup">
+        <div className="new-user"><h2>Register new user</h2></div>
             <form onSubmit={handleSubmit(onSubmit)}>
                 <label htmlFor="fullName">* Fullname:
             <input name="fullName" type="text" required ref={register} />

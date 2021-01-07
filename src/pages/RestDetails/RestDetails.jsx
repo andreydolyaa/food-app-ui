@@ -9,6 +9,7 @@ import { restaurantReducer } from './../../store/reducers/restaurantReducer';
 import { loadRestaurant } from '../../store/actions/restaurantActions';
 import { RestFeatures } from './../../cmps/RestFeatures/RestFeatures';
 import { RestMenu } from '../../cmps/RestMenu/RestMenu';
+import { AppFooter } from '../../cmps/AppFooter/AppFooter';
 
 export function RestDetails(props) {
 
@@ -47,7 +48,6 @@ export function RestDetails(props) {
             {restaurant &&
                 <RestMenu restaurant={restaurant} />
             }
-            
         </div>
     )
 }

@@ -9,27 +9,31 @@ import { Redirect } from 'react-router-dom';
 import { userService } from '../../services/userService';
 import { userReducer } from './../../store/reducers/userReducer';
 import { loadUser } from './../../store/actions/userActions';
+import { AppFooter } from '../../cmps/AppFooter/AppFooter';
 
 export function Checkout(props) {
     const { register, handleSubmit } = useForm();
 
     const cart = useSelector(state => state.cartReducer.cart);
     const user = useSelector(state => state.userReducer.user);
+    const restaurant = useSelector(state => state.restaurantReducer.restaurant);
     const dispatch = useDispatch();
 
 
     useEffect(() => {
         if(user) dispatch(loadUser(user._id));
     }, [])
+
     const onSubmit = async (data) => {
         orderService.submitOrder(data, cart, props.location.totalPrice);
         if (user) {
-            await userService.updatePurchaseHistory(user, cart);
+            await userService.updatePurchaseHistory(user, cart, restaurant,props.location.totalPrice);
         }
         props.history.push('/order-process');
     }
 
     return (
+        <div>
         <div className="checkout">
             <div className="checkout-ul">
                 <h2>Your Order - </h2>
@@ -66,7 +70,8 @@ export function Checkout(props) {
                 </div>
                 <button>Submit Order</button>
             </form>
-        </div>
+            </div>
+            </div>
     )
 }
 

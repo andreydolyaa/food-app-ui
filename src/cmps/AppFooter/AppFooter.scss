@@ -1,0 +1,51 @@
+
+
+.app-footer{
+    position: absolute;
+    bottom:0px;
+    top:100%;
+    width:100%;
+    background-color: black;
+    color:white;
+    height:200px;
+    margin:3rem auto 0px auto;
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+    font-family: worksans;
+    border-top-left-radius:3px;
+    border-top-right-radius:3px;
+    ul{
+        li{
+            margin:2rem;
+            list-style: none;
+
+        }
+    }
+    .social{
+        ul{
+            li{
+                display: flex;
+                align-items: center;
+                font-size:1rem;
+                a{
+                    text-decoration: none;
+                    color:white;
+                    transition: .2s;
+               }
+               i{
+                   margin-right:10px;
+               }
+               .facebook:hover{
+                   color:#4267B2;
+               }
+               .github:hover{
+                   color:#888888;
+               }
+               .linkedin:hover{
+                   color:#2867B2;
+               }
+            }
+        }
+    }
+}

@@ -1,6 +1,7 @@
 
 
 import axios from 'axios';
+import moment from 'moment';
 const BASE_URL = 'http://localhost:3001/api/auth';
 
 export const userService = {
@@ -14,6 +15,7 @@ export const userService = {
 }
 
 
+
 async function query() {
     return await axios.get('http://localhost:3001/api/user');
 }
@@ -21,19 +23,24 @@ async function query() {
 async function getUserByEmail(email) {
     const users = await query();
     const res = users.data.find(user => user.email === email);
-    return res;
+    if (sessionStorage.user === "") return null
+    else return res;
 }
 
 
-async function updatePurchaseHistory(user, purchase) {
-    // console.log(purchase);
-    // var obj = purchase.reduce(
-    //     (obj, item,idx) => Object.assign(obj, { [idx]: item }), {});
-    // user.orders.push(obj);
-    // console.log(user);
-    purchase.push(new Date());
+async function updatePurchaseHistory(user, purchase, restaurant, totalPrice) {
+    purchase.push(moment().format("dddd, MMMM Do YYYY, h:mm:ss a"));
+    purchase.push(totalPrice);
+    _changeKey(restaurant, "name", "restName");
+    purchase.push(restaurant)
     user.orders.push(purchase);
     return await axios.put(`http://localhost:3001/api/user/${user._id}`, user);
+}
+
+
+function _changeKey(obj, oldName, newName) {
+    obj[newName] = obj[oldName];
+    delete obj[oldName];
 }
 
 

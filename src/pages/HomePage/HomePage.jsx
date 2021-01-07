@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { loadRestaurants } from './../../store/actions/restaurantActions';
 import { RestList } from './../../cmps/RestList/RestList';
 import { HeroImg } from './../../cmps/HeroImg/HeroImg';
+import { AppFooter } from '../../cmps/AppFooter/AppFooter';
 
 
 export function HomePage() {

@@ -1,9 +1,10 @@
 
 import './UserDetails.scss';
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { userReducer } from './../../store/reducers/userReducer';
 import { loadUser } from './../../store/actions/userActions';
+import { AppFooter } from '../../cmps/AppFooter/AppFooter';
 
 export function UserDetails(props) {
 
@@ -12,27 +13,30 @@ export function UserDetails(props) {
 
 
     useEffect(() => {
+        console.log(props);
         if (user) dispatch(loadUser(user._id));
     }, [])
 
-
     return (
         <div className="user-details">
-            <h1>Hello, {user.username}</h1>
-            <h3>Your Purchase History</h3>
+            <div className="welcome-msg">
+                <h1>Hello, {user.username}!</h1>
+                <h3>Your Purchase History</h3>
+            </div>
             {
                 user.orders.map((puarchase, idx) => {
                     return (
                         <div className="order-list" key={idx}>
-                            <h4>Purchase Date: {puarchase[puarchase.length - 1]}</h4>
+                            <h4>Purchase Date: {puarchase[puarchase.length - 3]} <span>At: {puarchase[puarchase.length - 1].restName}</span></h4>
                             {puarchase.map((order, idx) => {
-                                return (
+                                return order.name && (
                                     <div className="order-history" key={idx}>
                                         <p>{order.name}</p>
                                         <p>${order.price}</p>
                                     </div>
                                 )
                             })}
+                            <p className="total-history">Total: ${puarchase[puarchase.length - 2]}</p>
                         </div>
                     )
                 })
