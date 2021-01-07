@@ -13,3 +13,9 @@
     border-radius: 5px;
     font-family:Raleway;
 }
+
+@media(max-width:325px){
+    .msg{
+        right:0;
+    }
+}

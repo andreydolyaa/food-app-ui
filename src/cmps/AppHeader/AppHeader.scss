@@ -6,6 +6,9 @@
     display:flex;
     align-items: center;
     justify-content: space-between;
+    .logo{
+        cursor: pointer;
+    }
     .logged-user{
         font-family: worksans;
         width:330px;
@@ -294,9 +297,6 @@
                 margin:1rem;
             }
         }
-    }
-    .app-header{
-        
     }
 }
 

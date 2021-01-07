@@ -90,3 +90,51 @@
         border:1px solid rgb(0, 0, 0);
     }
 }
+
+@media(max-width:1095px){
+    .checkout{
+        flex-direction: column;
+    }
+}
+
+@media(max-width:640px){
+    .checkout{
+        .checkout-list{
+            width:400px;
+        }
+    }
+}
+@media(max-width:425px){
+    .checkout{
+        .checkout-list{
+            width:300px;
+        }
+        .user-details{
+            width:320px;
+            label{
+                font-size:14px;
+            }
+            input{
+                width:180px;
+            }
+        }
+    }
+}
+@media(max-width:320px){
+    .checkout{
+        .checkout-list{
+            width:300px;
+        }
+        .user-details{
+            width:300px;
+            label{
+                font-size:14px;
+                text-align: start;
+            }
+            input{
+                width:150px;
+            }
+        }
+    }
+}
+

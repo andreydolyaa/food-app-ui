@@ -18,3 +18,13 @@
         width:500px;
     }
 }
+
+@media(max-width:600px){
+    .loading{
+        margin-top:3rem;
+        text-align: center;
+        img{
+            width:300px;
+        }
+    }
+}

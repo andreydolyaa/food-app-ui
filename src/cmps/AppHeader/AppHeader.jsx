@@ -1,7 +1,7 @@
 
 import './AppHeader.scss';
 import React, { useEffect, useState } from 'react'
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink, Redirect, useHistory, useLocation } from 'react-router-dom';
 import { Cart } from '../Cart/Cart';
 import { useDispatch, useSelector } from 'react-redux';
 import { userService } from '../../services/userService';
@@ -13,6 +13,7 @@ import { loadUser, setLoggedIn, logoutUser } from './../../store/actions/userAct
 export function AppHeader(props) {
     var [showCart, setShowCart] = useState(false);
     var [mobileMenu, setMobileMenu] = useState(false);
+    const history = useHistory();
 
 
     const cartItems = useSelector(state => state.cartReducer.cartItems);
@@ -21,7 +22,8 @@ export function AppHeader(props) {
     const dispatch = useDispatch();
 
     useEffect(() => {
-
+        console.log(props);
+        window.addEventListener('scroll', () => setMobileMenu(false));
     }, [])
 
     const cartToggle = () => {
@@ -41,11 +43,19 @@ export function AppHeader(props) {
         setMobileMenu(mobileMenu = !mobileMenu);
     }
 
+    const cartToggleR = () => {
+
+    }
+
+    const toMain = () => {
+        history.push('/');
+    }
+
 
     return (
         <div>
             <div className="app-header">
-                <div>
+                <div onClick={toMain} className="logo">
                     <h1>fooder<span>Place</span></h1>
                 </div>
                 <div className="links">

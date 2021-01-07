@@ -1,6 +1,6 @@
 
 
-import { HashRouter as Router, Route, Switch } from 'react-router-dom';
+import { HashRouter as Router, Redirect, Route, Switch } from 'react-router-dom';
 import { HomePage } from './pages/HomePage/HomePage';
 import { AppHeader } from './cmps/AppHeader/AppHeader';
 import { RestDetails } from './pages/RestDetails/RestDetails';
@@ -11,16 +11,17 @@ import { Signup } from './pages/Signup/Signup';
 import { Login } from './pages/Login/Login';
 import { UserDetails } from './pages/UserDetails/UserDetails';
 import { AppFooter } from './cmps/AppFooter/AppFooter';
+import { useEffect } from 'react';
 
 
 
 
-export function App() {
+export function App(props) {
 
     return (
         <div className="App">
             <Router>
-                <AppHeader />
+                <AppHeader/>
                 <Scroll />
                 <Switch>
                     <Route path="/restaurant/:id" render={props => <RestDetails {...props} />}></Route>
