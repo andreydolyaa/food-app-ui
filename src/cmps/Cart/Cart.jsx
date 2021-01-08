@@ -4,21 +4,39 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import './Cart.scss';
 import { Link } from 'react-router-dom';
+import { loadCart, setNumOfItems } from '../../store/actions/cartActions';
 
 
 export function Cart(props) {
     const [prods, setProds] = useState([]);
     const [price, setPrice] = useState(0);
+    const [itemDeleted, setItemDeleted] = useState(false);
     const products = useSelector(state => state.cartReducer.cart);
+    const dispatch = useDispatch();
 
     useEffect(() => {
         var res = products.reduce((acc, curr) => acc + curr.price, 0);
         setPrice(res);
-
     }, [])
 
     const closeCart = () => {
         props.close();
+    }
+
+    const deleteItemFromCart = (dish) => {
+        setItemDeleted(true);
+        var interval;
+        interval = setInterval(() => {
+            setItemDeleted(false);
+            clearInterval(interval);
+        }, 1000)
+        const prods = [...products];
+        const idx = prods.findIndex(product => product.dishId === dish);
+        prods.splice(idx, 1);
+        var res = prods.reduce((acc, curr) => acc + curr.price, 0);
+        setPrice(res);
+        dispatch(setNumOfItems(prods.length));
+        dispatch(loadCart(prods));
     }
 
 
@@ -26,6 +44,8 @@ export function Cart(props) {
         <div className="cart">
             <div className="close-cart">
                 <h3>Your order list -</h3>
+                {itemDeleted &&
+                    <p className="item-deleted">Item Deleted!</p>}
                 <i onClick={closeCart} className="fas fa-times"></i>
             </div>
             <ul>
@@ -34,7 +54,10 @@ export function Cart(props) {
                         return (
                             <li key={index}>
                                 <p>{product.name}</p>
-                                <p>${product.price}</p>
+                                <div className="price-del">
+                                    <p>${product.price}</p>
+                                    <p onClick={() => deleteItemFromCart(product.dishId)}><i class="far fa-trash-alt"></i></p>
+                                </div>
                             </li>
                         )
                     })

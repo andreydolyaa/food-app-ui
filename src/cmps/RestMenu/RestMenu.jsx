@@ -4,6 +4,8 @@ import React, { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux';
 import { loadCart, setNumOfItems } from '../../store/actions/cartActions';
 import { Msg } from '../Msg/Msg';
+import { utilService } from './../../services/utilService';
+
 
 export function RestMenu({ restaurant }) {
     const [dishes, setDishes] = useState([]);
@@ -29,6 +31,7 @@ export function RestMenu({ restaurant }) {
     }
 
     const addToCart = () => {
+        dishes.forEach(dish => dish.dishId = utilService.createId(10));
         dispatch(loadCart(dishes));
         dispatch(setNumOfItems(dishes.length));
         toggleMsg();

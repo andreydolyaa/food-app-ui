@@ -6,7 +6,7 @@ import axios from 'axios';
 // const BASE_URL = 'http://localhost:3001/submitOrder';
 
 const BASE_URL = process.env.NODE_ENV === 'production'
-    ? '/api/'
+    ? '/submitOrder'
     : 'http://localhost:3001/submitOrder'
 
 

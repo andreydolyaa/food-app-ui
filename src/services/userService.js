@@ -6,11 +6,11 @@ import moment from 'moment';
 
 
 const BASE_URL = process.env.NODE_ENV === 'production'
-    ? '/api/'
+    ? '/api/auth'
     : 'http://localhost:3001/api/auth'
 
 const BASE_URL_USER = process.env.NODE_ENV === 'production'
-    ? '/api/'
+    ? '/api/user'
     : 'http://localhost:3001/api/user'
 
 export const userService = {
