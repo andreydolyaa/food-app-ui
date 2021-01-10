@@ -22,8 +22,10 @@
         display: flex;
         flex-direction: column;
         width:500px;
-        
         border-radius: 3px;
+        .owner{
+            padding:12px;
+        }
         label{
             display:flex;
             justify-content: space-between;

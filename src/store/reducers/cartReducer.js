@@ -2,7 +2,10 @@
 
 const INITIAL_STATE = {
     cart: [],
-    cartItems: 0
+    menuCart: [],
+    cartItems: 0,
+    idx: 0,
+    totalPrice: 0
 }
 
 export function cartReducer(state = INITIAL_STATE, action) {
@@ -16,6 +19,16 @@ export function cartReducer(state = INITIAL_STATE, action) {
             return {
                 ...state,
                 cartItems: action.num
+            }
+        case 'SET_TOTAL_PRICE':
+            return {
+                ...state,
+                totalPrice: action.price
+            }
+        case 'SET_MENU_CART':
+            return {
+                ...state,
+                menuCart: action.products
             }
         default:
             return state;

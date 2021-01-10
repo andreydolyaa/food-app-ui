@@ -13,7 +13,21 @@
     border-radius: 5px;
     font-family:Raleway;
 }
-
+@media(max-width:500px){
+    .msg{
+        left:80px;
+    }
+}
+@media(max-width:415px){
+    .msg{
+        left:40px;
+    }
+}
+@media(max-width:372px){
+    .msg{
+        left:15px;
+    }
+}
 @media(max-width:325px){
     .msg{
         right:0;

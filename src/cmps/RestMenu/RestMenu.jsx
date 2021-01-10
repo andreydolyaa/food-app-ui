@@ -1,18 +1,28 @@
 
 import './RestMenu.scss';
 import React, { useEffect, useState } from 'react'
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { loadCart, setNumOfItems } from '../../store/actions/cartActions';
 import { Msg } from '../Msg/Msg';
 import { utilService } from './../../services/utilService';
+import { setTotalPrice } from './../../store/actions/cartActions';
+
 
 
 export function RestMenu({ restaurant }) {
     const [dishes, setDishes] = useState([]);
     var [showMsg, setMsg] = useState(false);
+    var [totalProdsPrice, setTotalProdsPrice] = useState(0);
     const dispatch = useDispatch();
     var interval;
 
+
+    const cart = useSelector(state => state.cartReducer.cart);
+
+
+    useEffect(() => {
+        setDishes(cart);
+    }, [cart])
 
     const addDish = (dish) => {
         dishes.push(dish);
@@ -30,10 +40,12 @@ export function RestMenu({ restaurant }) {
         return counter;
     }
 
-    const addToCart = () => {
+    const addToCart = (dishe) => {
         dishes.forEach(dish => dish.dishId = utilService.createId(10));
+        var totalPrice = dishes.reduce((acc, val) => acc += val.price, 0);
         dispatch(loadCart(dishes));
         dispatch(setNumOfItems(dishes.length));
+        dispatch(setTotalPrice(totalPrice));
         toggleMsg();
     }
 
@@ -70,7 +82,7 @@ export function RestMenu({ restaurant }) {
                                         <i className="far fa-minus-square"></i>
                                     </button>
                                 </div>
-                                <button onClick={addToCart}>add</button>
+                                <button onClick={() => addToCart(dish)}>add</button>
                             </div>
                         </li>
                     )

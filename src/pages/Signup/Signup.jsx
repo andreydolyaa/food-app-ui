@@ -17,13 +17,14 @@ export function Signup(props) {
     const dispatch = useDispatch();
 
     const onSubmit = async (data) => {
+        console.log(data);
         await userService.signup(data);
         props.history.push('/login');
     }
 
     return (
         <div className="signup">
-        <div className="new-user"><h2>Register new user</h2></div>
+            <div className="new-user"><h2>Register new user</h2></div>
             <form onSubmit={handleSubmit(onSubmit)}>
                 <label htmlFor="fullName">* Fullname:
             <input name="fullName" type="text" required ref={register} />
@@ -33,6 +34,9 @@ export function Signup(props) {
                 </label>
                 <label htmlFor="email">* Email:
             <input name="email" type="text" required ref={register} />
+                </label>
+                <label htmlFor="isOwner" className="owner">Register As Restaurant Owner?
+            <input name="isOwner" type="checkbox" ref={register} />
                 </label>
                 <button>Register</button>
             </form>

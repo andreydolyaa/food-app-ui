@@ -4,6 +4,23 @@
     position: relative;
     margin:1rem;
     z-index: 100;
+    .add-res{
+        position: absolute;
+        z-index: 101;
+        top:80%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-family: Raleway;
+        font-size:1.5rem;
+        padding:3px;
+        border:1px solid white;
+        background-color:transparent;
+        color:rgb(255, 255, 255);
+        width:300px;
+        cursor: pointer;
+        transition: .3s;
+        outline: none;
+    }
     h2{
         font-family:Raleway;
         color:rgb(243, 243, 243);
@@ -33,7 +50,7 @@
     button{
         position: absolute;
         z-index: 101;
-        top:80%;
+        top:70%;
         left: 50%;
         transform: translate(-50%, -50%);
         font-family: Raleway;
@@ -42,15 +59,17 @@
         border:1px solid white;
         background-color:transparent;
         color:white;
-        width:250px;
+        width:300px;
         cursor: pointer;
         transition: .3s;
+        outline: none;
         span{
             color:white;
         }
     }
     button:hover{
         border:1px solid rgb(78, 78, 78);
+        color:rgb(153, 153, 153);
     }
     
 }
@@ -104,7 +123,14 @@
 @media(max-width:390px){
     .hero-img{
         button{
+            top:60%;
+            width:250px;
+            font-size:1.2rem;
+        }
+        .add-res{
             top:70%;
+            width:250px;
+            font-size:1.2rem;
         }
         h2{
             top:35%;
@@ -117,6 +143,7 @@
         }
         margin:0;
         img{
+            border-top:2px solid rgb(128, 128, 128);
             border-radius: 0px;
         }
     }

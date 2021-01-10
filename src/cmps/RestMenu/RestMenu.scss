@@ -40,25 +40,27 @@
         display:flex;
         justify-content: space-between;
         align-items: flex-start;
-        
-       
+       i:hover{
+           color:rgb(0, 0, 0);
+       }
         p{
             font-size:14px;
             color:black;
         }
         button{
             border:1px solid gray;
-            background-color:transparent;
+            background-color:black;
             width:60px;
             cursor: pointer;
             transition: .2s;
             border-radius: 2px;
             align-self: flex-end;
             outline: none;
+            color:white
         }
         button:hover{
-            color:white;
-            background-color: black;
+            color:rgb(255, 255, 255);
+            background-color: rgb(80, 80, 80);
         }
     }
     .dish-num{
@@ -197,12 +199,12 @@
         }
     }
 }
-@media(max-width:420px){
+@media(max-width:470px){
     .rest-menu{
         flex-direction: column;
         justify-content: center;
         img{
-            width:250px;
+            width:310px;
             height:200px;
             text-align: center;
         }
@@ -212,7 +214,7 @@
             font-size:14px;
             p{
                 width:250px;
-                font-size:12px;
+                font-size:14px;
                 text-align: center;
                 margin:1rem auto;
             }
@@ -223,20 +225,22 @@
             justify-content: center;
             flex-direction: column;
             .dish-num{
-                width:70px;
-                font-size:1rem;
+                width:90px;
+                font-size:1.1rem;
                 i{
-                    font-size:1rem;
+                    font-size:1.1rem;
+                    color:black;
                 }
             }
             button{
                 width:100%;
                 margin-top:1rem;
+                font-size:1.1rem;
             }
             p{
                 margin:0px;
                 margin-top:5px;
-                font-size:12px;
+                font-size:16px;
             }
         }
     }

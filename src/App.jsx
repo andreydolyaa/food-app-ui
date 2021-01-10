@@ -11,7 +11,7 @@ import { Signup } from './pages/Signup/Signup';
 import { Login } from './pages/Login/Login';
 import { UserDetails } from './pages/UserDetails/UserDetails';
 import { AppFooter } from './cmps/AppFooter/AppFooter';
-import { useEffect } from 'react';
+import { CreateRestaurant } from './pages/CreateRestaurant/CreateRestaurant';
 
 
 
@@ -21,12 +21,13 @@ export function App(props) {
     return (
         <div className="App">
             <Router>
-                <AppHeader/>
+                <AppHeader />
                 <Scroll />
                 <Switch>
                     <Route path="/restaurant/:id" render={props => <RestDetails {...props} />}></Route>
                     <Route exact path="/order-process" component={RedirectPage}></Route>
                     <Route exact path="/user-details" component={UserDetails}></Route>
+                    <Route exact path="/restaurant-register" component={CreateRestaurant}></Route>
                     <Route exact path="/checkout" component={Checkout}></Route>
                     <Route excat path="/signup" component={Signup}></Route>
                     <Route excat path="/login" component={Login}></Route>

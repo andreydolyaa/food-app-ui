@@ -61,9 +61,9 @@ export function AppHeader(props) {
                 <div className="links">
                     <NavLink to="">About</NavLink>
                     <NavLink to="">Restaurants</NavLink>
-                    <NavLink to="">Order</NavLink>
                     <NavLink to="">Explore</NavLink>
                     <NavLink to="">Contact</NavLink>
+                    <NavLink className="reg-res" to="restaurant-register">Register Restaurant</NavLink>
                 </div>
                 {!user &&
                     <div className="user-icons">
@@ -98,9 +98,9 @@ export function AppHeader(props) {
                 <div className="mobile-links">
                     <NavLink to="">About</NavLink>
                     <NavLink to="">Restaurants</NavLink>
-                    <NavLink to="">Order</NavLink>
                     <NavLink to="">Explore</NavLink>
                     <NavLink to="">Contact</NavLink>
+                    <NavLink to="restaurant-register">Register Restaurant</NavLink>
                 </div>
                 <div className="mobile-login">
                     {!user &&
