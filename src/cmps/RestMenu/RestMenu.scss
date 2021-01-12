@@ -116,54 +116,26 @@
 }
 @media(max-width:730px){
     .rest-menu{
-        flex-direction: column;
-        justify-content: center;
         img{
             width:500px;
-            height:400px;
-            text-align: center;
-        }
-        li{
-            justify-content: center;
-            align-items: center;
-        }
-        .dish-info{
-            width:80%;
-            justify-content: space-between;
         }
     }
 }
 @media(max-width:590px){
     .rest-menu{
-        flex-direction: column;
-        justify-content: center;
         img{
             width:400px;
             height:300px;
-            text-align: center;
-        }
-        li{
-            justify-content: center;
-            align-items: center;
-        }
-        .dish-info{
-            width:80%;
-            justify-content: space-between;
         }
     }
 }
 @media(max-width:475px){
     .rest-menu{
-        flex-direction: column;
-        justify-content: center;
         img{
             width:350px;
             height:200px;
-            text-align: center;
         }
         li{
-            justify-content: center;
-            align-items: center;
             font-size:14px;
             p{
                 width:280px;
@@ -174,8 +146,6 @@
         }
         .dish-info{
             font-size:10px;
-           align-items: center;
-            justify-content: center;
             flex-direction: column;
             .dish-num{
                 width:70px;
@@ -201,16 +171,11 @@
 }
 @media(max-width:470px){
     .rest-menu{
-        flex-direction: column;
-        justify-content: center;
         img{
             width:310px;
             height:200px;
-            text-align: center;
         }
         li{
-            justify-content: center;
-            align-items: center;
             font-size:14px;
             p{
                 width:250px;
@@ -220,10 +185,6 @@
             }
         }
         .dish-info{
-            font-size:10px;
-           align-items: center;
-            justify-content: center;
-            flex-direction: column;
             .dish-num{
                 width:90px;
                 font-size:1.1rem;

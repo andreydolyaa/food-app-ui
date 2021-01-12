@@ -64,46 +64,22 @@
 }
 @media(max-width:590px){
     .rest-details{
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
         img{
             width:500px
-        }
-        .rest-desc{
-            width:100%;
-            text-align: center;
-            margin:1rem auto;
         }
     }
 }
 @media(max-width:517px){
     .rest-details{
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
         img{
             width:400px
-        }
-        .rest-desc{
-            width:100%;
-            text-align: center;
-            margin:1rem auto;
         }
     }
 }
 @media(max-width:420px){
     .rest-details{
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
         img{
             width:300px
-        }
-        .rest-desc{
-            width:100%;
-            text-align: center;
-            margin:1rem auto;
         }
         h1{
             font-size:1.5rem;

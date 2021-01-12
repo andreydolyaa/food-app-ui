@@ -73,7 +73,6 @@
     }
     
 }
-
 @media(max-width:1400px){
     .hero-img{
         h2{
@@ -90,36 +89,27 @@
         }
     }
 }
-
 @media(max-width:750px){
     .hero-img{
         h2{
             font-size:2rem;
             width:650px;
-            text-align: center;
             span{
                 font-size:4.5rem;
             }
         }
     }
 }
-
-
 @media(max-width:570px){
     .hero-img{
         h2{
-            font-size:2rem;
             width:350px;
-            text-align: center;
             span{
                 font-size:3.5rem;
             }
         }
     }
 }
-
-
-
 @media(max-width:390px){
     .hero-img{
         button{

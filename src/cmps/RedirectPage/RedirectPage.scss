@@ -1,5 +1,4 @@
 
-
 .loading{
     display: flex;
     justify-content: center;
@@ -18,7 +17,6 @@
         width:500px;
     }
 }
-
 @media(max-width:600px){
     .loading{
         min-height:55vh;
