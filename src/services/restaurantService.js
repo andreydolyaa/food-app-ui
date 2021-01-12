@@ -22,12 +22,8 @@ async function query(filterBy) {
     if (filterBy.searchKey) {
         return res.data.filter(rest => rest.name.toLowerCase().includes(filterBy.searchKey.toLowerCase()));
     }
-    else {
-        return res.data;
-    }
-
+    return res.data;
 }
-
 
 async function getById(id) {
     const res = await axios.get(`${BASE_URL}/${id}`);
