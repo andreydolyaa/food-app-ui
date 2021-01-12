@@ -14,7 +14,7 @@ At the checkout page the user needs to fill out their personal data for the rest
 will be notified with an email with all the order details.
 ## Features - Restaurant Owner
 A restaurant owner can register as a restaurant owner to be able to create he restaurant.  
-At the restaurant creation page the owner can set all the data about the restaurant inclding - adress, phone, location, openinig hours, restaurant images, restaurnt's features
+At the restaurant creation page the owner can set all the data about the restaurant including - adress, phone, location, openinig hours, restaurant images, restaurnt's features
 and a menu with all the items he wishes.  
 A menu item includes - Name, description, image, amount (grams) and price.  
 After all the data is ready the owner can publish the restaurant, and it will be available for all the users visiting the website.  
