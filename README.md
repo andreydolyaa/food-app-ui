@@ -2,7 +2,8 @@
 This project is created for learning purposes only.  
 This is a restaurant app, where users can order from different restaurants and restaurant owners can register their restaurant and sell their products.  
 #### Tools used in this project
-```React.js, Redux, Node.js, Express.js, MongoDB Atlas, JS, Sass, HTML5, CSS3.```
+```React.js, Redux, Node.js, Express.js, MongoDB Atlas, JS, Sass, HTML5, CSS3.```  
+``Backend files - https://github.com/andreydolyaa/fooder-backend
 
 ## Features - Users
 A user can register, or alternatively the user can perform orders from restaurants without registrating.  
