@@ -76,7 +76,7 @@ export function CreateRestaurant() {
                     <form onSubmit={handleSubmit(submitForm)}><button>Publish Your Restaurant</button></form>
                 </div>}
             <div className="restaurant-reg">
-                <div>
+                <div className="regz">
                     {user && user.isOwner && currRest &&
                         <form>
                             <h4>Restaurant Basic Details - </h4>
@@ -168,6 +168,11 @@ export function CreateRestaurant() {
                 {!user &&
                     <div className="not-logged">
                         <p>Please <Link to="/signup">Register</Link> as a owner or <Link to="/login">Login</Link> to create a new restaurant</p>
+                    </div>
+                }
+                {user && !user.isOwner &&
+                    <div className="not-logged">
+                        <p>You have not registred as an restaurant owner, Please <Link to="/signup">Register</Link> as a owner or <Link to="/login">Login</Link> with a different account.</p>
                     </div>
                 }
             </div>

@@ -3,22 +3,23 @@
 
 import React from 'react';
 import './AppFooter.scss';
+import { Link } from 'react-router-dom';
 
 export function AppFooter() {
     return (
         <div className="app-footer">
             <div>
                 <ul>
-                    <li>About Us</li>
-                    <li>Restaurants</li>
-                    <li>Contact Us</li>
+                    <Link to="/about"><li>About Us</li></Link>
+                    <Link to="/"><li>Restaurants</li></Link>
+                    <Link to="/contact"><li>Contact Us</li></Link>
                 </ul>
             </div>
             <div>
                 <ul>
                     <li>Careers</li>
-                    <li>About Developer</li>
-                    <li>More Code</li>
+                    <Link to="/about"><li>About Developer</li></Link>
+                    <a href="https://github.com/andreydolyaa"><li>More Code</li></a>
                 </ul>
             </div>
             <div className="social">
