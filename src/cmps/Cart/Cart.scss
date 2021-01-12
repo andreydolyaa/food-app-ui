@@ -100,10 +100,24 @@
 }
 
 
+@media(max-width:530px){
+    .cart{
+        width:320px;
+        top:50px;
+        margin:auto;
+    }
+}
+@media(max-width:390px){
+    .cart{
+        width:390px;
+        top:70px;
+        margin:auto;
+    }
+}
 @media(max-width:376px){
     .cart{
         width:320px;
-        top:0;
+        top:70px;;
         margin:auto;
     }
 }

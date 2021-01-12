@@ -14,7 +14,7 @@ export function HeroImg() {
             <h1></h1>
             <h2><span>FooderPlace</span> All the best restaurants in one place.</h2>
             <button className="btn-3"><span>F</span>OOD<span> N</span>OW </button>
-            <button className="add-res" onClick={moveTo}><span>A</span>DD <span>Y</span>OUR <span>R</span>ESTAURANT</button>
+            <button className="add-res" onClick={moveTo}><span>J</span>OI<span>N</span></button>
             <img src={img}></img>
         </div>
     )

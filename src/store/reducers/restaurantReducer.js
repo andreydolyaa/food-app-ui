@@ -1,8 +1,8 @@
+
 const INITIAL_STATE = {
     restaurants: [],
-    restaurant: null
+    restaurant: null,
 }
-
 
 export function restaurantReducer(state = INITIAL_STATE, action) {
     switch (action.type) {

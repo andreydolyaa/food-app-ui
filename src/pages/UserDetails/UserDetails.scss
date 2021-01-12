@@ -9,6 +9,17 @@
         background-color: rgb(240, 240, 240);
         padding:1rem;
         border-radius:3px;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        i{
+            cursor: pointer;
+            margin-left:1rem;
+            transition: .2s;
+        }
+        i:hover{
+            color: gray;
+        }
     }
     .total-history{
         margin-top:1rem;
@@ -18,6 +29,10 @@
     h1{
         color:rgb(255, 123, 0);
         margin:1rem;
+        font-size:1.5rem;
+        span{
+            color:rgb(0, 0, 0);
+        }
     }
     h3{
         color:rgb(129, 129, 129);
@@ -54,5 +69,21 @@
         padding:10px;
         border-radius: 3px;
         margin-top:1rem;
+    }
+}
+
+
+@media(max-width:905px){
+    .user-details{
+        .welcome-msg{
+            flex-direction: column;
+        }
+    }
+}
+@media(max-width:905px){
+    .user-details{
+        h1{
+            font-size:16px;
+        }
     }
 }

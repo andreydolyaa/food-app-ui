@@ -17,7 +17,6 @@ export function Signup(props) {
     const dispatch = useDispatch();
 
     const onSubmit = async (data) => {
-        console.log(data);
         await userService.signup(data);
         props.history.push('/login');
     }

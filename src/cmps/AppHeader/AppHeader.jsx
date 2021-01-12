@@ -59,11 +59,11 @@ export function AppHeader(props) {
                     <h1>fooder<span>Place</span></h1>
                 </div>
                 <div className="links">
-                    <NavLink to="">About</NavLink>
-                    <NavLink to="">Restaurants</NavLink>
-                    <NavLink to="">Explore</NavLink>
-                    <NavLink to="">Contact</NavLink>
-                    <NavLink className="reg-res" to="restaurant-register">Register Restaurant</NavLink>
+                    <NavLink to="/about">About</NavLink>
+                    <NavLink to="/">Restaurants</NavLink>
+
+                    <NavLink to="/contact">Contact</NavLink>
+                    <NavLink className="reg-res" to="restaurant-register">Publish</NavLink>
                 </div>
                 {!user &&
                     <div className="user-icons">
@@ -87,6 +87,8 @@ export function AppHeader(props) {
                 }
                 {showCart && <Cart close={close} />}
                 <div className="bars-btn">
+                <div className="cart-num">{cartItems}</div>
+                    <button className="bag"><i  onClick={cartToggle} className="fas fa-shopping-bag"></i></button>
                     <button onClick={openMobileMenu}><i className="fas fa-bars"></i></button>
                 </div>
             </div>
@@ -96,11 +98,11 @@ export function AppHeader(props) {
 
             <div className={mobileMenu ? 'show mobile-nav' : 'hide mobile-nav'}>
                 <div className="mobile-links">
-                    <NavLink to="">About</NavLink>
-                    <NavLink to="">Restaurants</NavLink>
-                    <NavLink to="">Explore</NavLink>
-                    <NavLink to="">Contact</NavLink>
-                    <NavLink to="restaurant-register">Register Restaurant</NavLink>
+                    <NavLink to="/about">About</NavLink>
+                    <NavLink to="/">Restaurants</NavLink>
+
+                    <NavLink to="/contact">Contact</NavLink>
+                    <NavLink to="restaurant-register">Publish</NavLink>
                 </div>
                 <div className="mobile-login">
                     {!user &&

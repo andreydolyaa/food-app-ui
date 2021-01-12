@@ -20,7 +20,8 @@ export const userService = {
     getById,
     logout,
     getUserByEmail,
-    updatePurchaseHistory
+    updatePurchaseHistory,
+    updateUserDetails
 }
 
 
@@ -43,6 +44,10 @@ async function updatePurchaseHistory(user, purchase, restaurant, totalPrice) {
     _changeKey(restaurant, "name", "restName");
     purchase.push(restaurant)
     user.orders.push(purchase);
+    return await axios.put(`${BASE_URL_USER}/${user._id}`, user);
+}
+
+async function updateUserDetails(user) {
     return await axios.put(`${BASE_URL_USER}/${user._id}`, user);
 }
 
