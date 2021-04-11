@@ -1,6 +1,9 @@
 ## About this project
 This project is created for learning purposes only.  
 This is a restaurant app, where users can order from different restaurants and restaurant owners can register their restaurant and sell their products.  
+
+https://fooder-place.herokuapp.com/#/
+
 #### Tools used in this project
 ```React.js, Redux, Node.js, Express.js, MongoDB Atlas, JS, Sass, HTML5, CSS3.```  
 Backend files - https://github.com/andreydolyaa/fooder-backend
